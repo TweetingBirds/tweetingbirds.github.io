@@ -1,0 +1,814 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #64b5f6;
+    --secondary-color: #81c784;
+    --accent-color: #ffb74d;
+    --text-dark: #121212;
+    --text-light: #424242;
+    --bg-dark: #0d1117;
+    --bg-medium: #161b22;
+    --bg-light: #21262d;
+    --white: #e6edf3;
+    --shadow: 0 0 20px rgba(100,181,246,0.15);
+    --transition: all 0.2s ease;
+    --border-color: #30363d;
+}
+
+body {
+    font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+    line-height: 1.6;
+    color: var(--white);
+    background: var(--bg-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+    background: var(--bg-medium);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a::before {
+    content: '> ';
+    color: var(--primary-color);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a:hover::before {
+    opacity: 1;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Hero Section */
+.hero {
+    background: 
+        linear-gradient(135deg, rgba(15, 32, 55, 0.95), rgba(30, 60, 100, 0.9)),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(74, 144, 226, 0.03) 2px,
+            rgba(74, 144, 226, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(74, 144, 226, 0.03) 2px,
+            rgba(74, 144, 226, 0.03) 4px
+        ),
+        linear-gradient(135deg, #0f1f2e, #1e3c64);
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: 
+        "# Ruby on Rails\Aclass TweetingBirds < ApplicationController\A  before_action :authenticate_user!\A  \A  def build_app\A    @mobile = MobileApp.new(params[:platform])\A    @web = WebApp.new(params[:framework])\A    render_amazing_solution\A  end\A\A  def deploy_project\A    @project = Project.find(params[:id])\A    @project.deploy_to_production!\A    redirect_to @project\A  end\A\A  private\A\A  def render_amazing_solution\A    case params[:type]\A    when 'mobile'\A      build_native_experience\A    when 'web'\A      deploy_responsive_app\A    when 'hybrid'\A      create_cross_platform\A    else\A      create_hybrid_solution\A    end\A  end\A  \A  def project_params\A    params.require(:project).permit(\A      :name, :platform, :features\A    )\A  end\Aend\A\A# Building your digital future\Amodule AppDevelopment\A  include Innovation\A  include Performance\A  include UserExperience\A  include Security\A\A  def self.create_magic\A    loop do\A      ideas = capture_requirements\A      design = craft_interface(ideas)\A      code = implement_solution(design)\A      test = run_test_suite(code)\A      deploy(code) if tests_pass?\A      monitor_performance\A    end\A  end\A  \A  def optimize_performance\A    cache_everything\A    minimize_queries\A    compress_assets\A  end\Aend\A\Aclass API::V1::BaseController\A  respond_to :json\A  \A  def render_success(data)\A    render json: {\A      status: 'success',\A      data: data\A    }\A  end\Aend";
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 50%;
+    bottom: -50%;
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgba(74, 144, 226, 0.10);
+    white-space: pre;
+    overflow: hidden;
+    animation: codeScrollDown 35s linear infinite;
+    pointer-events: none;
+    text-align: left;
+    padding: 40px;
+}
+
+.hero::after {
+    content: 
+        "// Swift & iOS Development\Aimport UIKit\Aimport SwiftUI\Aimport Combine\A\Aclass TweetingBirdsApp: UIViewController {\A    @IBOutlet weak var appView: UIView!\A    private var cancellables = Set<AnyCancellable>()\A    \A    override func viewDidLoad() {\A        super.viewDidLoad()\A        setupUI()\A        bindViewModel()\A    }\A    \A    func buildMobileExperience() {\A        let design = createModernUI()\A        let features = implementCoreFeatures()\A        let analytics = setupAnalytics()\A        deployToAppStore(design + features)\A    }\A    \A    private func createModernUI() -> AppInterface {\A        return AppInterface(\A            theme: .modern,\A            animations: .smooth,\A            responsive: true,\A            accessibility: .enabled\A        )\A    }\A    \A    private func bindViewModel() {\A        viewModel.$state\A            .sink { [weak self] state in\A                self?.updateUI(for: state)\A            }\A            .store(in: &cancellables)\A    }\A}\A\A// SwiftUI Excellence\Astruct AppDevelopment: View {\A    @State private var innovation = true\A    @State private var performance: Double = 100\A    @Environment(\\.colorScheme) var colorScheme\A    \A    var body: some View {\A        VStack(spacing: 20) {\A            Text(\"Building Amazing Apps\")\A                .font(.largeTitle)\A                .bold()\A            \A            ProgressView(value: performance, total: 100)\A                .progressViewStyle(.linear)\A            \A            Button(\"Deploy to Production\") {\A                deployApp()\A            }\A            .buttonStyle(.borderedProminent)\A        }\A        .padding()\A        .animation(.spring(), value: performance)\A    }\A    \A    func deployApp() {\A        withAnimation {\A            performance = 100\A        }\A    }\A}\A\Aprotocol AppBuilder {\A    func configure() -> Self\A    func optimize() -> Self\A    func launch() -> App\A}";
+    position: absolute;
+    top: -50%;
+    right: 0;
+    width: 50%;
+    bottom: -50%;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgba(80, 200, 120, 0.08);
+    white-space: pre;
+    overflow: hidden;
+    animation: codeScrollUp 28s linear infinite;
+    pointer-events: none;
+    text-align: left;
+    padding: 40px;
+}
+
+@keyframes codeScrollDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes codeScrollUp {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(100,181,246,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(100,181,246,0.4);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(129,199,132,0.4);
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: var(--bg-medium);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.services h2::before {
+    content: '[ ';
+}
+
+.services h2::after {
+    content: ' ]';
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    text-align: left;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.service-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(100,181,246,0.2);
+    background: var(--bg-dark);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.service-card h3::before {
+    content: '// ';
+    color: var(--secondary-color);
+}
+
+.service-card p {
+    color: var(--white);
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.about h2::before {
+    content: '< ';
+}
+
+.about h2::after {
+    content: ' />';
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.8;
+    font-family: 'Courier New', monospace;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat {
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(100,181,246,0.3);
+}
+
+.stat-number::before {
+    content: '0x';
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+.stat-label {
+    color: var(--white);
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 0;
+    background: var(--bg-medium);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.portfolio h2::before {
+    content: '{ ';
+}
+
+.portfolio h2::after {
+    content: ' }';
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 3rem;
+    font-family: 'Courier New', monospace;
+    opacity: 0.7;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+
+.portfolio-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(100,181,246,0.2);
+}
+
+.portfolio-placeholder {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-dark);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    border: 1px dashed var(--border-color);
+    text-transform: uppercase;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.contact h2::before {
+    content: '$ ';
+}
+
+.contact h2::after {
+    content: ' _';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-link {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    transition: var(--transition);
+    display: inline-block;
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+}
+
+.contact-link::before {
+    content: 'mailto: ';
+    opacity: 0.5;
+    font-size: 0.9rem;
+}
+
+.contact-link:hover {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(100,181,246,0.4);
+}
+
+/* Footer */
+footer {
+    background: var(--bg-medium);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    font-family: 'Courier New', monospace;
+}
+
+footer p::before {
+    content: '/* ';
+    color: var(--primary-color);
+}
+
+footer p::after {
+    content: ' */';
+    color: var(--primary-color);
+}
+
+/* Tech Stack Styles */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-category {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    background: var(--bg-light);
+}
+
+.tech-category h3 {
+    color: var(--secondary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.tech-category h3::before {
+    content: '>> ';
+    color: var(--primary-color);
+}
+
+.tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.tech-badge:hover {
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px rgba(100,181,246,0.3);
+}
+
+/* Metrics Section */
+.metrics {
+    padding: 80px 0;
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+}
+
+.metrics h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.metrics h2::before {
+    content: '{ ';
+}
+
+.metrics h2::after {
+    content: ' }';
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    background: var(--bg-medium);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    animation: scan 3s linear infinite;
+}
+
+.metric-value {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(100,181,246,0.2);
+}
+
+.metric-label {
+    color: var(--white);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.metric-graph {
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .services h2,
+    .about h2,
+    .portfolio h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-link {
+        font-size: 1.2rem;
+    }
+}
