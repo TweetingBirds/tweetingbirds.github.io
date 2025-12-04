@@ -194,11 +194,14 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Tweeting Birds. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Tweeting Birds. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Theme toggle
         const themeToggle = document.querySelector('.theme-toggle');
         const root = document.documentElement;
