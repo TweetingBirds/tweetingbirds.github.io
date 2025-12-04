@@ -13,19 +13,29 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <span class="brand-name">[TB://]</span>
+                    <span class="brand-name">Tweeting Birds</span>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#tech-stack">tech_stack</a></li>
-                    <li><a href="#metrics">metrics</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tech-stack">Technologies</a></li>
+                    <li><a href="#metrics">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-right">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -33,46 +43,34 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>System.build("mobile", "web")</h1>
-                <p class="hero-subtitle">// Deploying high-performance applications with clean architecture and scalable infrastructure</p>
+                <h1>We build apps that people love</h1>
+                <p class="hero-subtitle">Beautiful, high-performance mobile and web applications crafted with care. From concept to launch, we bring your ideas to life.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Initialize_Project()</a>
-                    <a href="#metrics" class="btn btn-secondary">View_Analytics()</a>
+                    <a href="#contact" class="btn btn-primary">Start a Project</a>
+                    <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
                 </div>
             </div>
         </section>
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Service_Modules</h2>
+                <h2>What We Do</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3>Mobile_Development</h3>
-                        <p><strong>Platforms:</strong> iOS 14+, Android 10+</p>
-                        <p><strong>Frameworks:</strong> Swift, Kotlin, Flutter</p>
-                        <p><strong>Architecture:</strong> MVC, MVVM, Clean Architecture, BloC</p>
-                        <p><strong>Performance:</strong> 60fps UI, <100ms response time</p>
+                        <h3>Mobile Apps</h3>
+                        <p>Native iOS and Android applications built with Swift, Kotlin, and Flutter. We create smooth, responsive experiences that users love.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Web_Development</h3>
-                        <p><strong>Stack:</strong> Ruby on Rails, Redis, PostgreSQL</p>
-                        <p><strong>Frontend:</strong> Tailwind.css, Vue.js, TypeScript</p>
-                        <p><strong>Performance:</strong> Lighthouse score 95+</p>
-                        <p><strong>Security:</strong> OWASP compliant, SSL/TLS</p>
+                        <h3>Web Development</h3>
+                        <p>Full-stack web applications using modern frameworks. Fast, secure, and built to scale with your business.</p>
                     </div>
                     <div class="service-card">
-                        <h3>System_Architecture</h3>
-                        <p><strong>Design:</strong> Monolith, Services, Event-driven</p>
-                        <p><strong>Infrastructure:</strong> AWS, GCP, Docker, K8s</p>
-                        <p><strong>CI/CD:</strong> GitHub Actions</p>
-                        <p><strong>Monitoring:</strong> Prometheus, Grafana, ELK</p>
+                        <h3>Backend Systems</h3>
+                        <p>Robust APIs and server infrastructure that power your applications. Reliable, scalable, and secure.</p>
                     </div>
                     <div class="service-card">
-                        <h3>API_Development</h3>
-                        <p><strong>Protocol:</strong> REST, GraphQL, gRPC</p>
-                        <p><strong>Auth:</strong> OAuth 2.0, JWT, API Keys</p>
-                        <p><strong>Rate Limiting:</strong> 10k req/min capacity</p>
-                        <p><strong>Response Time:</strong> p99 < 200ms</p>
+                        <h3>Consulting</h3>
+                        <p>Technical guidance and architecture planning. We help you make the right decisions for your project.</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +78,7 @@
 
         <section id="tech-stack" class="about">
             <div class="container">
-                <h2>Tech_Stack</h2>
+                <h2>Technologies We Use</h2>
                 <div class="tech-grid">
                     <div class="tech-category">
                         <h3>Languages</h3>
@@ -88,7 +86,7 @@
                             <span class="tech-badge">Ruby</span>
                             <span class="tech-badge">Swift</span>
                             <span class="tech-badge">Kotlin</span>
-                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">JavaScript</span>
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">Go</span>
                         </div>
@@ -108,7 +106,7 @@
                         <div class="tech-items">
                             <span class="tech-badge">AWS</span>
                             <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">Kubernetes</span>
+                            <span class="tech-badge">VMs</span>
                             <span class="tech-badge">PostgreSQL</span>
                             <span class="tech-badge">Redis</span>
                             <span class="tech-badge">Nginx</span>
@@ -119,10 +117,10 @@
                         <div class="tech-items">
                             <span class="tech-badge">Git</span>
                             <span class="tech-badge">CI/CD</span>
-                            <span class="tech-badge">Terraform</span>
-                            <span class="tech-badge">Datadog</span>
+                            <span class="tech-badge">GitHub</span>
+                            <span class="tech-badge">Claude Code</span>
                             <span class="tech-badge">Sentry</span>
-                            <span class="tech-badge">Jest</span>
+                            <span class="tech-badge">Mailgun</span>
                         </div>
                     </div>
                 </div>
@@ -131,45 +129,23 @@
 
         <section id="metrics" class="metrics">
             <div class="container">
-                <h2>Performance_Metrics</h2>
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">99.9%</div>
-                        <div class="metric-label">Uptime SLA</div>
-                        <div class="metric-graph">[████████████████████]</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">&lt;200ms</div>
-                        <div class="metric-label">API Response</div>
-                        <div class="metric-graph">[███████████████░░░░░]</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">100%</div>
-                        <div class="metric-label">Test Coverage</div>
-                        <div class="metric-graph">[████████████████████]</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">A+</div>
-                        <div class="metric-label">Security Score</div>
-                        <div class="metric-graph">[████████████████████]</div>
-                    </div>
-                </div>
+                <h2>Our Track Record</h2>
                 <div class="stats">
                     <div class="stat">
                         <div class="stat-number">14</div>
-                        <div class="stat-label">Projects_Deployed</div>
+                        <div class="stat-label">Projects Delivered</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">7</div>
-                        <div class="stat-label">Happy_Clients</div>
+                        <div class="stat-label">Happy Clients</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">25</div>
-                        <div class="stat-label">Years_Experience</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">3M+</div>
-                        <div class="stat-label">Lines_of_Code</div>
+                        <div class="stat-label">Lines of Code</div>
                     </div>
                 </div>
             </div>
@@ -177,17 +153,29 @@
 
         <section id="portfolio" class="portfolio">
             <div class="container">
-                <h2>Repository</h2>
-                <p class="section-subtitle">// Projects currently under NDA - sample architecture available upon request</p>
+                <h2>Our Work</h2>
+                <p class="section-subtitle">A selection of projects we've built</p>
                 <div class="portfolio-grid">
+                    <a href="https://quipsapp.com" class="portfolio-item" target="_blank" rel="noopener">
+                        <img src="quips-icon.png" alt="Quips App" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Quips</div>
+                            <p class="portfolio-description">A modern mobile app to save the quotes that move you. Organize them by collections and tags. Revisit your favorite words of wisdom anytime.</p>
+                        </div>
+                    </a>
+                    <a href="https://givingmachines.org" class="portfolio-item" target="_blank" rel="noopener">
+                        <img src="giving-machine-logo.png" alt="Giving Machine Portal" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Giving Machine Portal</div>
+                            <p class="portfolio-description">Internal web application to organize and simplify the logistics of supporting the Giving Machine Initiative in 100+ cities worldwide. Not publicly accessible.</p>
+                        </div>
+                    </a>
                     <div class="portfolio-item">
-                        <div class="portfolio-placeholder">[QUIPS_APP_v0.9]</div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-placeholder">[GIVING_MACHINE_BACKEND_v1.4]</div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-placeholder">[ARMARIA_v0.8]</div>
+                        <img src="armaria-icon.svg" alt="Armaria" class="portfolio-image">
+                        <div class="portfolio-content">
+                            <div class="portfolio-title">Armaria (Under development)</div>
+                            <p class="portfolio-description">Web app to track and save the books you read. Share what you like with friends and family and find new books that match your specific tastes.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -195,8 +183,8 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Initialize_Contact</h2>
-                <p class="contact-subtitle">// Open new connection for project initialization</p>
+                <h2>Let's Work Together</h2>
+                <p class="contact-subtitle">Ready to bring your idea to life? Get in touch.</p>
                 <div class="contact-info">
                     <a href="mailto:hello@tweetingbirds.com" class="contact-link">hello@tweetingbirds.com</a>
                 </div>
@@ -211,6 +199,34 @@
     </footer>
 
     <script>
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const root = document.documentElement;
+
+        // Check for saved theme preference or default to system
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            root.setAttribute('data-theme', savedTheme);
+        }
+
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = root.getAttribute('data-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            let newTheme;
+            if (currentTheme === 'dark') {
+                newTheme = 'light';
+            } else if (currentTheme === 'light') {
+                newTheme = 'dark';
+            } else {
+                // No manual theme set, toggle from system preference
+                newTheme = prefersDark ? 'light' : 'dark';
+            }
+
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
         // Mobile menu toggle
         document.querySelector('.nav-toggle').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
