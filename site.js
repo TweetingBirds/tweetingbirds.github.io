@@ -344,8 +344,8 @@ function setUpWire(occasion, scenery) {
     var FEET = 0.95;        // where the feet sit in the bird drawing, as a share of its height
 
     var wire = [
-        { offset: 0, speed: 0, stiffness: 170, damping: 3.4 },
-        { offset: 0, speed: 0, stiffness: 150, damping: 3.0 }
+        { offset: 0, speed: 0, stiffness: 170, damping: 5.2 },
+        { offset: 0, speed: 0, stiffness: 150, damping: 4.8 }
     ];
     var frame = 0;
     var lastTime = 0;
@@ -374,7 +374,7 @@ function setUpWire(occasion, scenery) {
             ride: 0,
             rideSpeed: 0,
             grip: between(240, 420),
-            settle: between(8, 14),
+            settle: between(11, 17),
             near: 0,        // how much of each control point's pull reaches this bird
             far: 0,
             lastLine: '',
@@ -539,14 +539,14 @@ function setUpWire(occasion, scenery) {
     function pluck(strength, direction, sceneX, sceneY) {
         if (reduceMotion.matches) return;
         var fraction = Math.max(0, Math.min(1, sceneX / scene.clientWidth));
-        var kick = direction * strength * between(1100, 1500);
+        var kick = direction * strength * between(750, 1000);
         // The side nearer the pluck takes more of it.
         wire[0].speed += kick * (1.25 - fraction * 0.9);
         wire[1].speed += kick * (0.35 + fraction * 0.9);
         // A slightly different spring every time keeps it from looking mechanical.
         wire.forEach(function (c) {
             c.stiffness = between(120, 230);
-            c.damping = between(2.6, 4.2);
+            c.damping = between(4.4, 6.2);
         });
         calmSince = performance.now();
 
