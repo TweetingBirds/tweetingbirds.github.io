@@ -5,105 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quips App Terms and Conditions - Tweeting Birds">
     <title>Quips Terms and Conditions - Tweeting Birds</title>
+    <script>
+        // Apply a saved theme before first paint, so the page doesn't flash.
+        (function () {
+            var saved = localStorage.getItem('theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <style>
-        .legal-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 100px 20px 60px;
-            font-family: 'Courier New', monospace;
-        }
-        .legal-content h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .legal-content h1::before {
-            content: '// ';
-        }
-        .legal-content .last-updated {
-            color: var(--white);
-            opacity: 0.7;
-            margin-bottom: 3rem;
-            font-size: 0.9rem;
-        }
-        .legal-content h2 {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        .legal-content h2::before {
-            content: '> ';
-            color: var(--primary-color);
-        }
-        .legal-content h3 {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-        }
-        .legal-content p, .legal-content li {
-            color: var(--white);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .legal-content ul {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .legal-content ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .legal-content a {
-            color: var(--primary-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary-color);
-        }
-        .legal-content a:hover {
-            color: var(--secondary-color);
-            border-bottom-color: var(--secondary-color);
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        .back-link::before {
-            content: '← ';
-        }
-        .back-link:hover {
-            color: var(--secondary-color);
-        }
-    </style>
 </head>
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <!-- A round little songbird, facing right. Its color comes from currentColor. -->
+            <symbol id="bird" viewBox="0 0 100 100">
+                <path d="M30 84 L22 96 M44 86 L40 98" stroke="#23304a" stroke-width="4" stroke-linecap="round"/>
+                <path d="M14 58 L2 50 L8 66 Z" fill="currentColor" stroke="#23304a" stroke-width="4" stroke-linejoin="round"/>
+                <ellipse cx="44" cy="58" rx="32" ry="28" fill="currentColor" stroke="#23304a" stroke-width="4"/>
+                <circle cx="68" cy="36" r="20" fill="currentColor" stroke="#23304a" stroke-width="4"/>
+                <path d="M86 34 L99 39 L86 44 Z" fill="#ffc93c" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="73" cy="33" r="4.5" fill="#23304a"/>
+                <circle cx="74.5" cy="31.5" r="1.5" fill="#fff"/>
+                <ellipse cx="38" cy="58" rx="17" ry="12" fill="#fff" opacity=".35"/>
+                <circle cx="64" cy="44" r="4" fill="#ff7a6b" opacity=".6"/>
+            </symbol>
+        </defs>
+    </svg>
+
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="nav-brand">
-                    <span class="brand-name">[TB://]</span>
-                </div>
+                <a class="nav-brand" href="index.html">
+                    <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bird"/></svg>
+                    Tweeting Birds
+                </a>
                 <ul class="nav-menu">
-                    <li><a href="index.html#services">services</a></li>
-                    <li><a href="index.html#tech-stack">tech_stack</a></li>
-                    <li><a href="index.html#metrics">metrics</a></li>
-                    <li><a href="index.html#contact">contact</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#tech-stack">Technologies</a></li>
+                    <li><a href="index.html#portfolio">Our Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-right">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -508,30 +468,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Tweeting Birds. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Tweeting Birds. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
-                    document.querySelector('.nav-menu').classList.remove('active');
-                    document.querySelector('.nav-toggle').classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>

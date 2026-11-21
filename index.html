@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tweeting Birds - Expert Mobile and Web App Development">
+    <meta name="description" content="Tweeting Birds builds beautiful, high-performance mobile and web apps, from first sketch to launch day.">
     <title>Tweeting Birds - Mobile & Web App Development</title>
+    <script>
+        // Apply a saved theme before first paint, so the page doesn't flash.
+        (function () {
+            var saved = localStorage.getItem('theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <!-- A round little songbird, facing right. Its color comes from currentColor. -->
+            <symbol id="bird" viewBox="0 0 100 100">
+                <path d="M30 84 L22 96 M44 86 L40 98" stroke="#23304a" stroke-width="4" stroke-linecap="round"/>
+                <path d="M14 58 L2 50 L8 66 Z" fill="currentColor" stroke="#23304a" stroke-width="4" stroke-linejoin="round"/>
+                <ellipse cx="44" cy="58" rx="32" ry="28" fill="currentColor" stroke="#23304a" stroke-width="4"/>
+                <circle cx="68" cy="36" r="20" fill="currentColor" stroke="#23304a" stroke-width="4"/>
+                <path d="M86 34 L99 39 L86 44 Z" fill="#ffc93c" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="73" cy="33" r="4.5" fill="#23304a"/>
+                <circle cx="74.5" cy="31.5" r="1.5" fill="#fff"/>
+                <ellipse cx="38" cy="58" rx="17" ry="12" fill="#fff" opacity=".35"/>
+                <circle cx="64" cy="44" r="4" fill="#ff7a6b" opacity=".6"/>
+            </symbol>
+        </defs>
+    </svg>
+
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="nav-brand">
-                    <span class="brand-name">Tweeting Birds</span>
-                </div>
+                <a class="nav-brand" href="#">
+                    <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bird"/></svg>
+                    Tweeting Birds
+                </a>
                 <ul class="nav-menu">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#tech-stack">Technologies</a></li>
-                    <li><a href="#metrics">About</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-right">
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
                         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
-                    <button class="nav-toggle" aria-label="Toggle navigation">
+                    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -43,34 +71,52 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>We build apps that people love</h1>
-                <p class="hero-subtitle">Beautiful, high-performance mobile and web applications crafted with care. From concept to launch, we bring your ideas to life.</p>
+                <h1>We build apps that people <span class="highlight">love</span></h1>
+                <p class="hero-subtitle">Beautiful, high-performance mobile and web apps, crafted with care. From first sketch to launch day, we bring your ideas to life.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Start a Project</a>
-                    <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+                    <a href="#contact" class="btn btn-primary">Start a project</a>
+                    <a href="#portfolio" class="btn btn-secondary">See our work</a>
                 </div>
             </div>
+            <div class="wire-scene" aria-hidden="true">
+                <svg class="wire" viewBox="0 0 1000 230" preserveAspectRatio="none">
+                    <path d="M-10 120 Q 500 210 1010 120" fill="none" stroke-width="4"/>
+                    <rect x="40" y="70" width="16" height="170" rx="4" fill="#b98a5e" stroke-width="4"/>
+                    <rect x="944" y="70" width="16" height="170" rx="4" fill="#b98a5e" stroke-width="4"/>
+                </svg>
+                <div class="perch" style="left:17%;top:62px;color:var(--sky)"><div class="tweet">Swift!</div><svg viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+                <div class="perch" style="left:33%;top:84px;color:var(--sun)"><svg viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+                <div class="perch" style="left:49%;top:91px;color:var(--coral)"><div class="tweet">Ship it 🚀</div><svg viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+                <div class="perch" style="left:65%;top:84px;color:var(--plum)"><svg class="flip" viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+                <div class="perch" style="left:80%;top:62px;color:var(--leaf)"><div class="tweet">Rails ♥</div><svg viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+            </div>
+            <div class="ground"></div>
         </section>
 
         <section id="services" class="services">
             <div class="container">
-                <h2>What We Do</h2>
+                <div class="eyebrow">What we do</div>
+                <h2>Every app needs a good nest</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3>Mobile Apps</h3>
-                        <p>Native iOS and Android applications built with Swift, Kotlin, and Flutter. We create smooth, responsive experiences that users love.</p>
+                        <div class="service-icon" style="--c:var(--tint-sky)">📱</div>
+                        <h3>Mobile apps</h3>
+                        <p>Native iPhone and iPad apps in Swift and SwiftUI that feel right at home on the device.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Web Development</h3>
-                        <p>Full-stack web applications using modern frameworks. Fast, secure, and built to scale with your business.</p>
+                        <div class="service-icon" style="--c:var(--tint-sun)">🌐</div>
+                        <h3>Web apps</h3>
+                        <p>Full-stack Rails apps with Hotwire. Fast, secure, and built to grow with you.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Backend Systems</h3>
-                        <p>Robust APIs and server infrastructure that power your applications. Reliable, scalable, and secure.</p>
+                        <div class="service-icon" style="--c:var(--tint-coral)">⚙️</div>
+                        <h3>Backend systems</h3>
+                        <p>APIs, sync, and infrastructure that quietly keep everything running.</p>
                     </div>
                     <div class="service-card">
+                        <div class="service-icon" style="--c:var(--tint-plum)">🧭</div>
                         <h3>Consulting</h3>
-                        <p>Technical guidance and architecture planning. We help you make the right decisions for your project.</p>
+                        <p>Architecture, planning, and a second set of eyes on the big decisions.</p>
                     </div>
                 </div>
             </div>
@@ -78,46 +124,48 @@
 
         <section id="tech-stack" class="about">
             <div class="container">
-                <h2>Technologies We Use</h2>
+                <div class="eyebrow">Technologies</div>
+                <h2>What's in our toolbox</h2>
                 <div class="tech-grid">
-                    <div class="tech-category">
+                    <div class="tech-category" style="--c:var(--sky)">
                         <h3>Languages</h3>
                         <div class="tech-items">
-                            <span class="tech-badge">Ruby</span>
                             <span class="tech-badge">Swift</span>
-                            <span class="tech-badge">Kotlin</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Ruby</span>
                             <span class="tech-badge">Go</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">HTML &amp; CSS</span>
+                            <span class="tech-badge">SQL</span>
                         </div>
                     </div>
-                    <div class="tech-category">
+                    <div class="tech-category" style="--c:var(--sun)">
                         <h3>Frameworks</h3>
                         <div class="tech-items">
-                            <span class="tech-badge">Rails</span>
-                            <span class="tech-badge">Vapor</span>
                             <span class="tech-badge">SwiftUI</span>
-                            <span class="tech-badge">Flutter</span>
-                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">SwiftData</span>
+                            <span class="tech-badge">Rails</span>
+                            <span class="tech-badge">Hotwire</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">Hummingbird</span>
                         </div>
                     </div>
-                    <div class="tech-category">
+                    <div class="tech-category" style="--c:var(--leaf)">
                         <h3>Infrastructure</h3>
                         <div class="tech-items">
-                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">CloudKit</span>
+                            <span class="tech-badge">Cloudflare</span>
+                            <span class="tech-badge">SQLite</span>
+                            <span class="tech-badge">Kamal</span>
                             <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">VMs</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">Redis</span>
-                            <span class="tech-badge">Nginx</span>
+                            <span class="tech-badge">GitHub Pages</span>
                         </div>
                     </div>
-                    <div class="tech-category">
+                    <div class="tech-category" style="--c:var(--coral)">
                         <h3>Tools</h3>
                         <div class="tech-items">
-                            <span class="tech-badge">Git</span>
-                            <span class="tech-badge">CI/CD</span>
-                            <span class="tech-badge">GitHub</span>
+                            <span class="tech-badge">Xcode Cloud</span>
+                            <span class="tech-badge">TestFlight</span>
+                            <span class="tech-badge">GitHub Actions</span>
                             <span class="tech-badge">Claude Code</span>
                             <span class="tech-badge">Sentry</span>
                             <span class="tech-badge">Mailgun</span>
@@ -129,23 +177,24 @@
 
         <section id="metrics" class="metrics">
             <div class="container">
-                <h2>Our Track Record</h2>
+                <div class="eyebrow">Track record</div>
+                <h2>A few numbers we're proud of</h2>
                 <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">14</div>
-                        <div class="stat-label">Projects Delivered</div>
+                    <div class="stat" style="--c:var(--sun)">
+                        <div class="stat-number">17</div>
+                        <div class="stat-label">Projects delivered</div>
                     </div>
-                    <div class="stat">
+                    <div class="stat" style="--c:var(--coral)">
                         <div class="stat-number">7</div>
-                        <div class="stat-label">Happy Clients</div>
+                        <div class="stat-label">Happy clients</div>
                     </div>
-                    <div class="stat">
+                    <div class="stat" style="--c:var(--leaf)">
                         <div class="stat-number">25</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-label">Years of experience</div>
                     </div>
-                    <div class="stat">
+                    <div class="stat" style="--c:var(--plum)">
                         <div class="stat-number">3M+</div>
-                        <div class="stat-label">Lines of Code</div>
+                        <div class="stat-label">Lines of code</div>
                     </div>
                 </div>
             </div>
@@ -153,34 +202,34 @@
 
         <section id="portfolio" class="portfolio">
             <div class="container">
-                <h2>Our Work</h2>
-                <p class="section-subtitle">A selection of projects we've built</p>
+                <div class="eyebrow">Our work</div>
+                <h2>Things we've hatched</h2>
                 <div class="portfolio-grid">
-                    <a href="https://quipsapp.com" class="portfolio-item" target="_blank" rel="noopener">
-                        <img src="quips-icon.png" alt="Quips App" class="portfolio-image">
+                    <a href="https://quipsapp.com" class="portfolio-item" target="_blank" rel="noopener" style="--c:var(--tint-mint)">
+                        <div class="portfolio-art"><img src="quips-icon.png" alt="Quips app icon" class="portfolio-image"></div>
                         <div class="portfolio-content">
                             <div class="portfolio-title">Quips</div>
-                            <p class="portfolio-description">A modern mobile app to save the quotes that move you. Organize them by collections and tags. Revisit your favorite words of wisdom anytime.</p>
+                            <p class="portfolio-description">A modern mobile app to save the quotes that move you. Organize them by collections and tags, and revisit your favorite words of wisdom anytime.</p>
                         </div>
                     </a>
-                    <a href="https://placemoir.app" class="portfolio-item" target="_blank" rel="noopener">
-                        <img src="placemoir-icon.png" alt="Placemoir App" class="portfolio-image">
+                    <a href="https://placemoir.app" class="portfolio-item" target="_blank" rel="noopener" style="--c:var(--tint-leaf)">
+                        <div class="portfolio-art"><img src="placemoir-icon.png" alt="Placemoir app icon" class="portfolio-image"></div>
                         <div class="portfolio-content">
-                            <div class="portfolio-title">Placemoir</div>
-                            <p class="portfolio-description">A field journal for places. Remember the restaurants, hotels, parks, and museums you visit with your own ratings, notes, photos, voice memos, and the weather that day. Private, ad-free, and synced with your own iCloud. Now on the App Store for iPhone and iPad.</p>
+                            <div class="portfolio-title">Placemoir <span class="tag">New</span></div>
+                            <p class="portfolio-description">A field journal for places. Remember the restaurants, hotels, parks, and museums you visit with your own ratings, notes, photos, voice memos, and the weather that day. Now on the App Store for iPhone and iPad.</p>
                         </div>
                     </a>
-                    <a href="https://givingmachines.org" class="portfolio-item" target="_blank" rel="noopener">
-                        <img src="giving-machine-logo.png" alt="Giving Machine Portal" class="portfolio-image">
+                    <a href="https://givingmachines.org" class="portfolio-item" target="_blank" rel="noopener" style="--c:var(--tint-coral)">
+                        <div class="portfolio-art"><img src="giving-machine-logo.png" alt="Giving Machine logo" class="portfolio-image wide"></div>
                         <div class="portfolio-content">
                             <div class="portfolio-title">Giving Machine Portal</div>
                             <p class="portfolio-description">Internal web application to organize and simplify the logistics of supporting the Giving Machine Initiative in 100+ cities worldwide. Not publicly accessible.</p>
                         </div>
                     </a>
-                    <a href="https://github.com/TweetingBirds/appbird" class="portfolio-item" target="_blank" rel="noopener">
-                        <img src="appbird-icon.png" alt="App Bird" class="portfolio-image">
+                    <a href="https://github.com/TweetingBirds/appbird" class="portfolio-item" target="_blank" rel="noopener" style="--c:var(--tint-sky)">
+                        <div class="portfolio-art"><img src="appbird-icon.png" alt="App Bird icon" class="portfolio-image"></div>
                         <div class="portfolio-content">
-                            <div class="portfolio-title">App Bird</div>
+                            <div class="portfolio-title">App Bird <span class="tag">Open source</span></div>
                             <p class="portfolio-description">An open-source command line tool for App Store Connect. Keep your app's metadata, screenshots, and TestFlight notes in plain text files, see what changed, and push updates when you're ready.</p>
                         </div>
                     </a>
@@ -189,9 +238,10 @@
         </section>
 
         <section id="contact" class="contact">
+            <svg class="flyer" viewBox="0 0 100 100" aria-hidden="true"><use href="#bird"/></svg>
             <div class="container">
-                <h2>Let's Work Together</h2>
-                <p class="contact-subtitle">Ready to bring your idea to life? Get in touch.</p>
+                <h2>Got an idea? Let's make it sing.</h2>
+                <p class="contact-subtitle">Tell us what you're dreaming up. We'll chirp back soon.</p>
                 <div class="contact-info">
                     <a href="mailto:hello@tweetingbirds.com" class="contact-link">hello@tweetingbirds.com</a>
                 </div>
@@ -205,57 +255,6 @@
         </div>
     </footer>
 
-    <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Theme toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const root = document.documentElement;
-
-        // Check for saved theme preference or default to system
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            root.setAttribute('data-theme', savedTheme);
-        }
-
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = root.getAttribute('data-theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            let newTheme;
-            if (currentTheme === 'dark') {
-                newTheme = 'light';
-            } else if (currentTheme === 'light') {
-                newTheme = 'dark';
-            } else {
-                // No manual theme set, toggle from system preference
-                newTheme = prefersDark ? 'light' : 'dark';
-            }
-
-            root.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
-                    document.querySelector('.nav-menu').classList.remove('active');
-                    document.querySelector('.nav-toggle').classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>
