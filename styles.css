@@ -697,17 +697,68 @@ section h2 {
     transform: translateY(-4px) rotate(-1deg);
 }
 
-.contact .flyer {
-    position: absolute;
-    width: 70px;
-    top: 30%;
-    left: -100px;
-    color: var(--sun);
-    animation: fly 14s linear infinite;
+/* The little bird that walks along the path in the contact section.
+   site.js moves it, turns it at the edges, and makes it hop away from
+   the cursor or a tap. */
+.contact {
+    padding-bottom: 170px;
 }
 
-@keyframes fly {
-    to { transform: translateX(calc(100vw + 200px)) translateY(-40px); }
+.contact-path {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 52px;
+    background: var(--ground);
+    border-top: 3px solid var(--outline);
+}
+
+.contact-path::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14px;
+    border-top: 3px dashed rgba(255, 255, 255, 0.35);
+}
+
+.walker {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 64px;
+    color: var(--sun);
+    pointer-events: none;
+    will-change: transform;
+}
+
+.walker-face svg {
+    display: block;
+    width: 100%;
+    transform-origin: 50% 100%;
+}
+
+.walker.walking .walker-face svg {
+    animation: waddle 0.36s ease-in-out infinite;
+}
+
+.walker.pecking .walker-face svg {
+    animation: peck 0.9s ease-in-out infinite;
+}
+
+.walker.hopping .walker-face svg {
+    transform: rotate(-12deg);
+}
+
+@keyframes waddle {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg) translateY(-3px); }
+}
+
+@keyframes peck {
+    0%, 60%, 100% { transform: rotate(0); }
+    75% { transform: rotate(28deg) translateY(4px); }
 }
 
 /* Footer */
