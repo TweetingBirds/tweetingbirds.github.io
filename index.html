@@ -64,11 +64,88 @@
                 <ellipse cx="38" cy="58" rx="17" ry="12" fill="#fff" opacity=".35"/>
                 <circle cx="64" cy="44" r="4" fill="#ff7a6b" opacity=".6"/>
             </symbol>
-            <!-- A winter scarf that sits on the bird's neck. Its color comes from the fill of the <use>. -->
-            <symbol id="scarf" viewBox="0 0 100 100">
+            <!-- Seasonal and holiday accessories, drawn in the bird's own 100×100 space.
+                 site.js picks which ones show (see the .season-* and .holiday-* classes in styles.css).
+                 Paths without a fill take their color from the <use>, so each bird can differ. -->
+            <symbol id="acc-scarf" viewBox="0 0 100 100" overflow="visible">
                 <path d="M52 64 L44 84 L54 86 L60 66 Z" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M47 50 Q62 62 82 50 L84 58 Q62 72 45 58 Z" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M55 57 L57 63 M64 59 L65 65 M73 57 L74 63" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+            </symbol>
+            <symbol id="acc-umbrella" viewBox="0 0 100 100" overflow="visible">
+                <g transform="translate(68 -6) scale(1.35) translate(-68 6)">
+                <path d="M68 -8 L60 60" stroke="#23304a" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M38 -6 Q68 -42 98 -6 Q90.5 -11 83 -6 Q75.5 -11 68 -6 Q60.5 -11 53 -6 Q45.5 -11 38 -6 Z" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M68 -26 Q63 -16 60 -8 M68 -26 Q73 -16 76 -8" stroke="#fff" stroke-width="2" opacity=".5" fill="none"/>
+                <circle cx="68" cy="-26" r="2.5" fill="#23304a"/>
+                </g>
+            </symbol>
+            <symbol id="acc-sunglasses" viewBox="0 0 100 100" overflow="visible">
+                <path d="M66 31 L50 27" stroke="#23304a" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M65 28 Q75 25 86 28 Q86 38 76 39 Q66 39 65 28 Z" fill="#1d2236" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M70 30 L75 30" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+            </symbol>
+            <symbol id="acc-shades-up" viewBox="0 0 100 100" overflow="visible">
+                <path d="M58 16 Q70 9 84 14 Q85 22 75 23 Q63 24 58 16 Z" fill="#1d2236" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M64 16 L69 15" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+            </symbol>
+            <symbol id="acc-beanie" viewBox="0 0 100 100" overflow="visible">
+                <path d="M49 28 Q49 9 68 9 Q87 9 87 28 Z" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M46 27 Q68 21 90 27 L90 33 Q68 27 46 33 Z" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="68" cy="7" r="5.5" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-santa" viewBox="0 0 100 100" overflow="visible">
+                <path d="M49 27 Q52 2 76 -2 Q90 0 96 16 L88 18 Q84 8 78 8 Q86 16 87 27 Z" fill="#e5484d" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M45 25 Q68 19 91 25 L91 33 Q68 27 45 33 Z" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="94" cy="19" r="5.5" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-elf" viewBox="0 0 100 100" overflow="visible">
+                <path d="M49 27 Q54 -2 74 -12 Q90 -18 102 -4 Q90 -6 82 0 Q84 12 87 27 Z" fill="#2fa45a" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M45 25 Q68 19 91 25 L91 33 Q68 27 45 33 Z" fill="#e5484d" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M50 26 L54 32 L58 26 L62 32 L66 25 L70 31 L74 25 L78 31 L82 25 L86 31" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" opacity=".85"/>
+                <circle cx="103" cy="-3" r="5" fill="#ffc93c" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-party" viewBox="0 0 100 100" overflow="visible">
+                <path d="M57 20 L69 -18 L83 18 Z" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M60 11 L80 9 M64 -1 L76 -3" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+                <circle cx="69" cy="-19" r="5" fill="#ffc93c" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-pilgrim" viewBox="0 0 100 100" overflow="visible">
+                <path d="M55 17 L59 -8 L81 -8 L85 17 Z" fill="#2b2b38" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M44 16 L96 16 L96 22 L44 22 Z" fill="#2b2b38" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <rect x="63" y="5" width="14" height="10" rx="1.5" fill="none" stroke="#ffc93c" stroke-width="3"/>
+            </symbol>
+            <symbol id="acc-leprechaun" viewBox="0 0 100 100" overflow="visible">
+                <path d="M55 17 L57 -10 L83 -10 L85 17 Z" fill="#2fa45a" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M56 5 L84 5 L84 11 L56 11 Z" fill="#23304a"/>
+                <rect x="65" y="3.5" width="9" height="9" rx="1.5" fill="none" stroke="#ffc93c" stroke-width="2.5"/>
+                <path d="M44 16 L96 16 L96 22 L44 22 Z" fill="#2fa45a" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-bunny" viewBox="0 0 100 100" overflow="visible">
+                <path d="M58 20 Q50 -14 58 -20 Q68 -18 67 18 Z" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M59 12 Q56 -8 60 -13 Q63 -8 63 12 Z" fill="#ffb3c7"/>
+                <path d="M71 18 Q72 -20 82 -20 Q90 -12 79 20 Z" fill="#fff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M74 12 Q76 -10 81 -13 Q83 -6 78 12 Z" fill="#ffb3c7"/>
+            </symbol>
+            <symbol id="acc-blush" viewBox="0 0 100 100" overflow="visible">
+                <circle cx="63" cy="45" r="6.5" fill="#ff5d8f" opacity=".75"/>
+                <path d="M88 14 C 84 8, 76 12, 82 20 L 88 26 L 94 20 C 100 12, 92 8, 88 14 Z" fill="#ff5d8f" stroke="#23304a" stroke-width="2.5" stroke-linejoin="round"/>
+            </symbol>
+            <symbol id="acc-ghost" viewBox="0 0 100 100" overflow="visible">
+                <path d="M8 90 Q4 44 28 30 Q44 10 68 10 Q94 12 94 44 L96 90 Q88 82 80 90 Q72 82 64 90 Q56 82 48 90 Q40 82 32 90 Q24 82 16 90 Q12 86 8 90 Z" fill="#fbfbff" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <ellipse cx="66" cy="38" rx="5" ry="7" fill="#23304a"/>
+                <ellipse cx="82" cy="38" rx="5" ry="7" fill="#23304a"/>
+                <ellipse cx="74" cy="56" rx="5" ry="6" fill="#23304a"/>
+            </symbol>
+            <symbol id="acc-twig" viewBox="0 0 100 100" overflow="visible">
+                <path d="M82 40 L118 30 M104 34 L110 24" stroke="#8a5a32" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M110 24 Q118 18 120 24 Q114 28 110 24 Z" fill="#4cc38a" stroke="#23304a" stroke-width="2"/>
+            </symbol>
+            <symbol id="acc-icecream" viewBox="0 0 100 100" overflow="visible">
+                <path d="M89 46 L99 72 L109 46 Z" fill="#e8b56b" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M93 52 L104 52 M96 60 L102 60" stroke="#b9853c" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="99" cy="40" r="10" fill="#ff9cc0" stroke="#23304a" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="96" cy="29" r="3.5" fill="#e5484d" stroke="#23304a" stroke-width="2.5"/>
             </symbol>
         </defs>
     </svg>
@@ -128,15 +205,15 @@
             </div>
             <div class="wire-scene" aria-hidden="true">
                 <svg class="wire" viewBox="0 0 1000 230" preserveAspectRatio="none">
-                    <path d="M-10 120 Q 500 210 1010 120" fill="none" stroke-width="4"/>
+                    <path d="M-10 120 C 330 180 670 180 1010 120" fill="none" stroke-width="4"/>
                     <rect x="40" y="70" width="16" height="188" rx="4" fill="#b98a5e" stroke-width="4"/>
                     <rect x="944" y="70" width="16" height="188" rx="4" fill="#b98a5e" stroke-width="4"/>
                 </svg>
-                <div class="perch" data-x="17" data-zzz style="left:17%;top:62px;color:var(--sky);--scarf:var(--coral)"><div class="tweet">Swift!</div><div class="bird"><svg viewBox="0 0 100 100"><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="scarf" href="#scarf"/></svg></div></div>
-                <div class="perch" data-x="33" style="left:33%;top:84px;color:var(--sun);--scarf:var(--plum)"><div class="bird"><svg viewBox="0 0 100 100"><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="scarf" href="#scarf"/></svg></div></div>
-                <div class="perch" data-x="49" data-zzz style="left:49%;top:91px;color:var(--coral);--scarf:var(--sky)"><div class="tweet">Ship it 🚀</div><div class="bird"><svg viewBox="0 0 100 100"><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="scarf" href="#scarf"/></svg></div></div>
-                <div class="perch" data-x="65" style="left:65%;top:84px;color:var(--plum);--scarf:var(--sun)"><div class="bird"><svg class="flip" viewBox="0 0 100 100"><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="scarf" href="#scarf"/></svg></div></div>
-                <div class="perch" data-x="80" data-zzz style="left:80%;top:62px;color:var(--leaf);--scarf:var(--coral)"><div class="tweet">Rails ♥</div><div class="bird"><svg viewBox="0 0 100 100"><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="scarf" href="#scarf"/></svg></div></div>
+                <div class="perch" data-x="17" data-zzz style="left:17%;top:62px;color:var(--sky);--scarf:var(--coral)"><div class="tweet">Swift!</div><div class="bird"><svg viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-ghost" href="#acc-ghost"/></svg></div></div>
+                <div class="perch elf" data-x="33" style="left:33%;top:84px;color:var(--sun);--scarf:var(--plum)"><div class="bird"><svg viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-ghost" href="#acc-ghost"/></svg></div></div>
+                <div class="perch ghost" data-x="49" data-zzz style="left:49%;top:91px;color:var(--coral);--scarf:var(--sky)"><div class="tweet">Ship it 🚀</div><div class="bird"><svg viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-ghost" href="#acc-ghost"/></svg></div></div>
+                <div class="perch elf" data-x="65" style="left:65%;top:84px;color:var(--plum);--scarf:var(--sun)"><div class="bird"><svg class="flip" viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-ghost" href="#acc-ghost"/></svg></div></div>
+                <div class="perch" data-x="80" data-zzz style="left:80%;top:62px;color:var(--leaf);--scarf:var(--coral)"><div class="tweet">Rails ♥</div><div class="bird"><svg viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-ghost" href="#acc-ghost"/></svg></div></div>
             </div>
             <div class="ground"></div>
         </section>
@@ -288,7 +365,7 @@
         <section id="contact" class="contact">
             <div class="contact-path" aria-hidden="true"></div>
             <div class="walker" aria-hidden="true">
-                <div class="walker-face"><svg viewBox="0 0 100 100"><use href="#bird"/></svg></div>
+                <div class="walker-face"><svg viewBox="0 0 100 100"><use class="acc acc-umbrella" href="#acc-umbrella"/><use class="eyes-open" href="#bird"/><use class="eyes-shut" href="#bird-asleep"/><use class="acc acc-scarf" href="#acc-scarf"/><use class="acc acc-blush" href="#acc-blush"/><use class="acc acc-sunglasses" href="#acc-sunglasses"/><use class="acc acc-shades-up" href="#acc-shades-up"/><use class="acc acc-beanie" href="#acc-beanie"/><use class="acc acc-santa" href="#acc-santa"/><use class="acc acc-elf" href="#acc-elf"/><use class="acc acc-party" href="#acc-party"/><use class="acc acc-pilgrim" href="#acc-pilgrim"/><use class="acc acc-leprechaun" href="#acc-leprechaun"/><use class="acc acc-bunny" href="#acc-bunny"/><use class="acc acc-twig" href="#acc-twig"/><use class="acc acc-icecream" href="#acc-icecream"/></svg></div>
             </div>
             <div class="container">
                 <h2>Got an idea? Let's make it sing.</h2>
