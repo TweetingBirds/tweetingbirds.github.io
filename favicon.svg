@@ -1,6 +1,13 @@
-<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="40" height="40" fill="#0d1117"/>
-    <rect x="2" y="2" width="36" height="36" fill="none" stroke="#64b5f6" stroke-width="1"/>
-    <text x="20" y="26" font-family="monospace" font-size="24" fill="#64b5f6" text-anchor="middle">TB</text>
-    <text x="20" y="35" font-family="monospace" font-size="10" fill="#64b5f6" text-anchor="middle">://</text>
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="60" height="60" rx="16" fill="#ffc93c" stroke="#23304a" stroke-width="3"/>
+    <g transform="translate(5.5 4.5) scale(0.52)">
+        <path d="M30 84 L22 96 M44 86 L40 98" stroke="#23304a" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M14 58 L2 50 L8 66 Z" fill="#5bb8f5" stroke="#23304a" stroke-width="4.5" stroke-linejoin="round"/>
+        <ellipse cx="44" cy="58" rx="32" ry="28" fill="#5bb8f5" stroke="#23304a" stroke-width="4.5"/>
+        <circle cx="68" cy="36" r="20" fill="#5bb8f5" stroke="#23304a" stroke-width="4.5"/>
+        <path d="M85 31 L100 39 L85 47 Z" fill="#ff7a6b" stroke="#23304a" stroke-width="4.5" stroke-linejoin="round"/>
+        <circle cx="73" cy="33" r="5.5" fill="#23304a"/>
+        <circle cx="75" cy="31" r="1.8" fill="#fff"/>
+        <ellipse cx="38" cy="58" rx="17" ry="12" fill="#fff" opacity=".35"/>
+    </g>
 </svg>
